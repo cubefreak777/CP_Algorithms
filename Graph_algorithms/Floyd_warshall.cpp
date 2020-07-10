@@ -1,9 +1,17 @@
-int n,m,d1[mxN][mxN],d2[mxN][mxN],b[mxM+1];
-memset(d1,0x3f,sizeof(d1)) ;  
-// d1's are the path weights of adjacent neighbours 
-memcpy(d2,d1,sizeof(d2)) ;
-  For(i,n)d2[i][i]=0 ;
-  For(k,n)
-    For(i,n)
-      For(j,n)
-        d2[i][j]=min(d2[i][j],d2[i][k]+d2[k][j]) ;
+int n,m,q ;
+ll d[mxN][mxN] ;
+int main() {
+  cin >> n >> m>> q ;
+  memset(d,0x3f,sizeof(d)) ;
+  for(int i=0;i<m;i++){
+    ll a,b,c;cin >> a >>  b >>  c;
+    d[a][b]=min(d[a][b],(ll)c) ;
+    d[b][a]=min(d[b][a],(ll)c) ;
+  }
+  for(int i=1;i<=n;i++)
+    d[i][i]=0 ;
+  for(int k=1;k<=n;k++)
+    for(int i=1;i<=n;i++)
+      for(int j=1;j<=n;j++)
+        d[i][j]=min(d[i][j],d[i][k]+d[k][j]) ;
+ }
