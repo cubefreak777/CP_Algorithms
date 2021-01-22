@@ -49,4 +49,21 @@ int main() {
     cout << d[i+1] << " ";
 	return 0;
 }
-
+// functional implementation of priority_queue implementation without template.
+void dijktras(int s,vector<ar<int,2>>adj[mxN],int d[mxN]){
+  priority_queue<ar<int,2>,vector<ar<int,2>>,greater<ar<int,2>>> pq ;
+  pq.push({0,s}) ;
+  memset(d,0x3f,sizeof(d1)) ;d[s]=0 ;
+  while(pq.size()){
+    ar<int,2> u= pq.top() ;
+    pq.pop() ;
+    if(u[0]>d[u[1]])
+      continue ;
+    for(ar<int,2> v:adj[u[1]]){
+      if(u[0]+v[0]<d[v[1]]){
+        d[v[1]]=u[0]+v[0] ;
+        pq.push({d[v[1]],v[1]}) ;
+      }
+    }
+  }
+}
