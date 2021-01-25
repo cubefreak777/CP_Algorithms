@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/1328/problem/E  <- check this for commented code 
+//https://codeforces.com/contest/1328/submission/78989984 <- check this for commented code 
 
 vi adj[mxN] ;
 int anc[mxN][18],d[mxN],n,m;
