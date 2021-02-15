@@ -1,6 +1,6 @@
 //https://codeforces.com/contest/1328/submission/78989984 <- check this for commented code 
 
-vi adj[mxN] ;
+vector<int> adj[mxN] ;
 int anc[mxN][18],d[mxN],n,m;
 void dfs(int v,int p){
   anc[v][0]=p ;d[v]=d[p]+1 ;
