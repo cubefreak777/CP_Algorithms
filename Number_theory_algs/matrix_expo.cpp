@@ -25,7 +25,6 @@ int main(){
   mat C(N),R(N) ;
   // intialize C 
   R.ide() ;
-  R.ide() ;
   for(;m;C=(C*C),m/=2)
     if(m&1)
       R=(R*C) ;
