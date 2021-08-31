@@ -1,3 +1,4 @@
+// https://www.codechef.com/LTIME99A/problems/BNYHOP
 // drill this in your head: use zero indexed tree structure and ds[i] is starting index of subtree i and de[i]-1 is the last node in the subtree 
 // subtree query falttening
 void dfs(int u=0,int p=-1){
