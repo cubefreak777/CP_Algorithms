@@ -1,3 +1,28 @@
+// drill this in your head: use zero indexed tree structure and ds[i] is starting index of subtree i and de[i]-1 is the last node in the subtree 
+// subtree query falttening
+void dfs(int u=0,int p=-1){
+  ds1[u]=dt++  ;
+  for(int v:adj[u])
+    if(v^p)
+      dfs(v,u) ;
+  de1[u]=dt ;
+}
+// path query falttening 
+// ds[i] is the first index of subtree i and de[i]-1 is the last index of subtree i ds[i] and de[i]-1 represent the same node i and both have values of opposite sign but 
+// the same magnitude. 
+void dfs1(int u=0,int p=-1){
+  ds2[u]=dt++ ;
+  for(int v:adj[u]){
+    if(v^p)
+      dfs1(v,u) ;
+  }
+  de2[u]=++dt  ;
+}
+
+
+
+
+
 //https://cses.fi/problemset/task/1137
 #include <bits/stdc++.h>
 using namespace std;
